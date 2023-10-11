@@ -1,0 +1,12 @@
+<p><%= notice %></p>
+
+<h1>Doctors Details</h1>
+
+<p><strong>name: </strong><%= @doctor.name %></p>
+<p><strong>specialization: </strong><%= @doctor.specialization %></p>
+<p><strong>email: </strong><%= @doctor.email %></p>
+<p><strong>password: </strong><%= @doctor.password %></p>
+<p><strong>password_confirmation: </strong><%= @doctor.password_confirmation %></p>
+
+
+<%= link_to 'back', doctors_path %> | <%= link_to 'edit', edit_doctors_path(@doctor) %>

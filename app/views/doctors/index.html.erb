@@ -1,0 +1,64 @@
+<!-- <p><%= notice %></p>
+
+<h1>List of doctors</h1>
+<%= link_to 'New Doctor', new_doctor_path %>
+
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Specialization</th>
+			<th colspan="3">Actions</th>
+
+		</tr>
+	</thead>
+	<tbody>
+		<% @doctors.each do |doctor| %>
+		<tr>
+			<td><%= doctor.name%></td>
+			<td><%= doctor.specialization%></td>
+			<td><%= link_to 'view', doctor %></td>
+			<td><%= link_to 'edit', edit_doctor_path(doctor) %></td>
+			<td><%= link_to 'delete', doctor, method: :delete, data: {confirm: "Are you sure?" } %></td>
+			
+		</tr>
+		<%end%>
+	</tbody>
+</table> -->
+
+<!-- app/views/doctors/index.html.erb -->
+
+<!-- app/views/doctors/index.html.erb -->
+
+<h1>List of Doctors</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Specialization</th>
+      <th>email</th>
+      <th>password</th>
+      <th>password_confirmation</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @doctors.each do |doctor| %>
+      <tr>
+        <td><%= doctor.name %></td>
+        <td><%= doctor.specialization %></td>
+        <td><%= doctor.email %></td>
+        <td><%= doctor.password%></td>
+        <td><%= doctor.password_confirmation%></td>
+        <td>
+          <%= link_to 'Show', doctor, class: 'btn btn-info btn-sm' %>
+          <%= link_to 'Edit', edit_doctor_path(doctor), class: 'btn btn-warning btn-sm' %>
+          <%= link_to 'Delete', doctor, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Add New Doctor', new_doctor_path, class: 'btn btn-primary' %>
